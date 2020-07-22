@@ -44,9 +44,6 @@ void step(struct Data *data)
     }
     errorDetector(ret);
     
-    data->m1Counts = sets->mode;
-    data->m2Counts = data->m2Speed;
-    
     ret = roboclaw_encoders(rc, sets->address, &data->m1Counts, &data->m2Counts);
     errorDetector(ret);
 
