@@ -1,4 +1,4 @@
-# RaspberryPi_RoboClaw_Simulink
+# RoboClaw with Simulink for Raspberry Pi
 
 ## Overview
 This model makes it possible to control the RoboClaw using Raspberry Pi on Simulink. This model can be controlled duty and speed. And also it can be logged counts of encoder and battery voltage.
