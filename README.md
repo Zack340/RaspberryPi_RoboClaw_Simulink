@@ -16,5 +16,5 @@ Created with
 * Pololu 131:1 Metal Gearmotor 37Dx73L mm 12V with 64 CPR Encoder (Helical Pinion)
 
 ## License
-This program is managed under the MIT License, but **roboclaw.h** in the "*include*" folder and **roboclaw.c** in the "*src*" folder are **copyrighted by Mr. Bartosz Meglicki**. These need to be managed under **MPL License 2.0**.\
+This program is managed under the MIT License, however **roboclaw.h** in the "*include*" folder and **roboclaw.c** in the "*src*" folder are **copyrighted by Mr. Bartosz Meglicki**. These need to be managed under **MPL License 2.0**.\
 Reference : [ bmegli/roboclaw ](https://github.com/bmegli/roboclaw)
