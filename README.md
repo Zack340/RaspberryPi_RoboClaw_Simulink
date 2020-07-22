@@ -1,5 +1,7 @@
 # RoboClaw with Simulink for Raspberry Pi
 
+[![View RoboClaw with Simulink for Raspberry Pi on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://jp.mathworks.com/matlabcentral/fileexchange/78480-roboclaw-with-simulink-for-raspberry-pi)
+
 ## Overview
 This model makes it possible to control the RoboClaw using Raspberry Pi on Simulink. This model can be controlled duty and speed. And also it can be logged counts of encoder and battery voltage.
 
