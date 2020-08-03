@@ -96,8 +96,8 @@ classdef RoboClawDriver < realtime.internal.SourceSampleTime ...
                                   'retries', obj.retries,...
                                   'strict_0xFF_ACK', obj.strict_0xFF_ACK,...
                                   'mode', obj.modeId);
-                coder.cstructname(settings, 'struct Settings', 'extern', 'HeaderFile', 'roboclaw_wrapper.h');
-                coder.ceval('initialize', coder.ref(settings));
+                coder.cstructname(settings, 'struct roboclaw_Settings', 'extern', 'HeaderFile', 'roboclaw_wrapper.h');
+                coder.ceval('roboclaw_initialize', coder.ref(settings));
             end
         end
         
@@ -122,8 +122,8 @@ classdef RoboClawDriver < realtime.internal.SourceSampleTime ...
                               'm2Counts', int32(0),...
                               'voltage', single(0));
                 
-                coder.cstructname(data, 'struct Data', 'extern', 'HeaderFile', 'roboclaw_wrapper.h');
-                coder.ceval('step', coder.ref(data));
+                coder.cstructname(data, 'struct roboclaw_Data', 'extern', 'HeaderFile', 'roboclaw_wrapper.h');
+                coder.ceval('roboclaw_step', coder.ref(data));
                 
                 varargout{1} = double(data.m1Counts);
                 varargout{2} = double(data.m2Counts);
@@ -136,7 +136,7 @@ classdef RoboClawDriver < realtime.internal.SourceSampleTime ...
                 % Place simulation termination code here
             else
                 % Call C-function implementing device termination
-                coder.ceval('terminate');
+                coder.ceval('roboclaw_terminate');
             end
         end
     end
@@ -305,6 +305,7 @@ classdef RoboClawDriver < realtime.internal.SourceSampleTime ...
                 % linker flags
                 addSourceFiles(buildInfo,'roboclaw.c', srcDir);
                 addSourceFiles(buildInfo,'roboclaw_wrapper.c', srcDir);
+                addLinkFlags(buildInfo,'-lpthread');
             end
         end
     end
